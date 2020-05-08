@@ -1,7 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
 
-const User = require('./models/user')
 const authRoute = require('./routes/auth')
 const userRoute = require('./routes/user')
 const tutorRoute = require('./routes/tutor')
@@ -12,7 +11,7 @@ const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use('/', authRoute)
+app.use(authRoute)
 app.use(userRoute)
 app.use(tutorRoute)
 app.use(categoryRoute)
